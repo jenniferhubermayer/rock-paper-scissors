@@ -1,0 +1,152 @@
+@import url(./animations.css);
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+body {
+  background-color: rgb(236, 153, 153);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+img {
+  height: 300px;
+  width: 300px;
+}
+
+button.btn-users-hand {
+  background-color: unset;
+  border-radius: 50%;
+  border: none;
+}
+button.btn-users-hand:hover {
+  background: rgb(118, 232, 3);
+}
+button.btn-users-hand img {
+  width: 100px;
+  height: 100px;
+  margin: 25px;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 4rem;
+  font-family: "Righteous", cursive;
+  padding-bottom: 1.5rem;
+}
+
+h3 {
+  padding-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.rounds {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  text-align: center;
+  border: solid 8px black;
+}
+.rounds h2 {
+  width: 100%;
+  padding-bottom: 1.5rem;
+}
+.rounds-number {
+  text-align: center;
+  width: 100%;
+  display: block;
+  margin-top: 1rem;
+}
+.rounds fieldset {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: none;
+}
+.rounds label {
+  display: block;
+  width: 12%;
+  text-align: left;
+}
+.rounds input {
+  display: block;
+  width: 12%;
+  text-align: right;
+}
+.rounds button {
+  background-color: chartreuse;
+  width: 80%;
+  border: none;
+  margin: 10px;
+  padding: 10px;
+}
+.rounds button:hover {
+  background: rgb(118, 232, 3);
+}
+
+.counter {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  border: solid 8px black;
+  justify-content: center;
+  gap: 10px;
+}
+.counter .counter-output {
+  display: flex;
+  gap: 40px;
+  align-items: baseline;
+}
+.counter .counter-output #counter-output-user,
+.counter .counter-output #counter-output-computer {
+  font-size: 2.5rem;
+  font-family: "Righteous", cursive;
+}
+
+footer,
+#round-text-winner {
+  width: 100%;
+  text-align: center;
+}
+
+#round-text-winner span {
+  text-transform: uppercase;
+  font-family: "Righteous", cursive;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  font-family: "Righteous", cursive;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.play {
+  display: flex;
+  background: chartreuse;
+  width: 80%;
+  border: solid black 9px;
+  align-items: center;
+  padding: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.play h3 {
+  width: 100%;
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */

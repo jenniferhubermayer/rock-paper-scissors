@@ -1,0 +1,42 @@
+.hand{
+    width: 180px;
+    height: 180px;
+    &#hand-right{
+        transform: scaleX(-1) rotate(90deg);
+        }
+    &#hand-left{
+        transform: rotate(90deg);
+    }
+    }
+
+.big-hands{
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hand-shake{
+    &#hand-right{
+        animation: shakeHandRight 1s;
+        animation-iteration-count: 3;
+        animation-timing-function: ease-out;
+        }
+    &#hand-left{
+        animation: shakeHandLeft 1s;
+        animation-iteration-count: 3;
+        animation-timing-function: ease-out;
+    }
+}
+
+    @keyframes shakeHandLeft {
+        60%{
+            transform: rotate(75deg);
+        }
+    }
+    @keyframes shakeHandRight {
+        60%{
+            transform: scaleX(-1) rotate(75deg);
+        }
+    }
