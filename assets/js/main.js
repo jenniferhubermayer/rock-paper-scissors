@@ -17,6 +17,7 @@ let sectionCounter = document.querySelector(".counter");
 let sectionPlay = document.querySelector(".play");
 let sectionRoundWinner = document.querySelector("#round-text-winner");
 let sectionEndWinner = document.querySelector("#end-text-winner");
+let sectionBody = document.querySelector("body");
 let sectionFooter = document.querySelector("footer");
 
 // ---------------
@@ -69,10 +70,10 @@ countRounds.forEach((btn) => {
 document.querySelector("#submit").addEventListener("click", (event) => {
   event.preventDefault();
   if (roundsNumberSelectedOutput.innerText >= 5){
-  sectionRounds.style.display = "none";
-  sectionCounter.style.display = "flex";
-  sectionPlay.style.display = "unset";
-  sectionFooter.style.display = "inherit";
+    sectionRounds.style.display = "none";
+    sectionCounter.style.display = "flex";
+    sectionPlay.style.display = "unset";
+    sectionFooter.style.display = "inherit";
   }
   else{
     window.alert("First things first. Please choose the number of rounds you wish to play!")
@@ -100,6 +101,7 @@ userHandButton.forEach((btn) => {
     sectionPlay.style.display = "none"
     sectionRoundWinner.style.display = "none";
     sectionEndWinner.style.display = "none";
+    sectionBody.style.backgroundColor = "rgb(236, 153, 153)";
 
     // Fügt die CSS Klasse nach einem Timeout hinzu und gibt die Hand des Users aus.
     setTimeout(function(){
@@ -107,6 +109,7 @@ userHandButton.forEach((btn) => {
       roundTextWinner.innerText = "";
       addShakeHands();
       sectionFooter.style.display = "none";
+      sectionBody.style.backgroundColor = "lightblue";
 
       // Checke den Gewinner der Runde, nach 3200 Millisekunden:
       setTimeout(function checkRoundWinner(){
@@ -115,12 +118,16 @@ userHandButton.forEach((btn) => {
           sectionRoundWinner.style.display = "unset";
           sectionPlay.style.display = "unset";
           sectionFooter.style.display = "inherit";
+          sectionBody.style.backgroundColor = "#f4c97a";
+          sectionPlay.style.backgroundColor = "#f2a81f";
         }
         else if (usersHand == "paper" && computersHand == "stone" || usersHand == "scissors" && computersHand == "paper" || usersHand == "stone" && computersHand == "scissors" ){
           roundTextWinner.innerHTML = `<span>${usersHand}</span> beats <span>${computersHand}</span>.<br>One point for you!`;
           sectionRoundWinner.style.display = "unset";
           sectionPlay.style.display = "unset";
           sectionFooter.style.display = "inherit";
+          sectionBody.style.backgroundColor = "#c7f698";
+          sectionPlay.style.backgroundColor = "chartreuse";
           counterRankUser ++;
           counterOutputUser.innerText = counterRankUser;
         }
@@ -129,6 +136,8 @@ userHandButton.forEach((btn) => {
           sectionRoundWinner.style.display = "unset";
           sectionPlay.style.display = "unset";
           sectionFooter.style.display = "inherit";
+          sectionBody.style.backgroundColor = "rgb(236, 153, 153)";
+          sectionPlay.style.backgroundColor = "rgb(225, 113, 113)";
           counterRankComputer ++;
           counterOutputComputer.innerText = counterRankComputer;
         }
@@ -141,13 +150,19 @@ userHandButton.forEach((btn) => {
           sectionEndWinner.style.display = "unset";
           sectionFooter.style.display = "inherit";
           if (counterRankUser > counterRankComputer){
-            sectionEndWinner.innerHTML = "Woohoo! You win!"
+            sectionEndWinner.innerHTML = "Woohoo! You win!";
+            sectionBody.style.backgroundColor = "#c7f698";
+            sectionPlay.style.backgroundColor = "chartreuse";
           }
           else if (counterRankUser < counterRankComputer){
-            sectionEndWinner.innerHTML = "You're a looooooser! Try it again!"
+            sectionEndWinner.innerHTML = "You're a looooooser! Try it again!";
+            sectionBody.style.backgroundColor = "rgb(236, 153, 153)";
+            sectionPlay.style.backgroundColor = "rgb(225, 113, 113)";
           }
           else{
-            sectionEndWinner.innerHTML = "Looks like this game was a draw. Try it again!"
+            sectionEndWinner.innerHTML = "Looks like this game was a draw. Try it again!";
+            sectionBody.style.backgroundColor = "#f4c97a";
+            sectionPlay.style.backgroundColor = "#f2a81f";
           }
         }
       }, 2500)

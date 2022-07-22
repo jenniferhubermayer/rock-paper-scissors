@@ -10,8 +10,13 @@
 // ------------------
 
 $leberwurst: rgb(236, 153, 153);
+$leberwurstDark: rgb(225, 113, 113);
+$saureGurkeLight: #c7f698;
 $saureGurke: chartreuse;
-$saureGurkeDark: rgb(118, 232, 3);
+$saureGurkeDark: rgb(117, 232, 3);
+$schlumpfLight: lightblue;
+$schlumpf: rgb(142, 185, 200);
+$schlumpfDark: rgb(127, 167, 182);
 
 // ------------------
 // MIXINS
@@ -47,12 +52,12 @@ html{
 }
 
 body{
-    background-color: $leberwurst;
+    background-color: $schlumpfLight;
     height: 100vh;
 }
 
 header{
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
 main{
@@ -67,11 +72,10 @@ h1{
     font-size: 2rem;
     font-family: 'Righteous', cursive;
     margin-bottom: 1.5rem;
-    margin-top: 1.5rem
+    margin-top: 1.5rem;
 }
 
 h3{
-    margin-bottom: 1rem;
     font-size: 1.5rem;
 }
 
@@ -100,7 +104,6 @@ a{
     &-number{
         width: 100%;
         display: block;
-        margin-top: 1rem;
     }
     fieldset{
         @include flexBox(center, center, unset);
@@ -118,13 +121,13 @@ a{
         }
         button{
             @include boxBorder();
-            background-color: $saureGurke;
+            background-color: $schlumpf;
             color: black;
             font-family: 'Righteous', cursive;
             width: 80%;
             margin: 10px;
             &:hover{
-                background: $saureGurkeDark;
+                background-color: $schlumpfDark;
             }
         }
     }
@@ -157,7 +160,6 @@ a{
         @include boxBorder();
         width: 90%;
         max-width: 400px;
-        background-color: $saureGurke;
         margin-bottom: unset;
     }
     h2{
@@ -171,7 +173,8 @@ a{
 
 .play{
     @include boxBorder();
-    background: $saureGurke;
+    // background: $saureGurke;
+    background-color: rgb(107, 155, 171);
     width: 90%;
     max-width: 400px;
     button{

@@ -13,12 +13,12 @@ html {
 }
 
 body {
-  background-color: rgb(236, 153, 153);
+  background-color: lightblue;
   height: 100vh;
 }
 
 header {
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 main {
@@ -41,7 +41,6 @@ h1 {
 }
 
 h3 {
-  margin-bottom: 1rem;
   font-size: 1.5rem;
 }
 
@@ -68,7 +67,6 @@ a:hover {
 .rounds-number {
   width: 100%;
   display: block;
-  margin-top: 1rem;
 }
 .rounds fieldset {
   display: flex;
@@ -92,14 +90,14 @@ a:hover {
 .rounds fieldset button {
   border: solid 8px black;
   padding: 10px;
-  background-color: chartreuse;
+  background-color: rgb(142, 185, 200);
   color: black;
   font-family: "Righteous", cursive;
   width: 80%;
   margin: 10px;
 }
 .rounds fieldset button:hover {
-  background: rgb(118, 232, 3);
+  background-color: rgb(127, 167, 182);
 }
 
 .counter {
@@ -144,7 +142,6 @@ a:hover {
   padding: 10px;
   width: 90%;
   max-width: 400px;
-  background-color: chartreuse;
   margin-bottom: unset;
 }
 .big-hands h2 {
@@ -158,7 +155,7 @@ a:hover {
 .play {
   border: solid 8px black;
   padding: 10px;
-  background: chartreuse;
+  background-color: rgb(107, 155, 171);
   width: 90%;
   max-width: 400px;
 }
@@ -168,7 +165,7 @@ a:hover {
   border: none;
 }
 .play button.btn-users-hand:hover {
-  background: rgb(118, 232, 3);
+  background: rgb(117, 232, 3);
 }
 .play button.btn-users-hand img {
   width: 70px;
