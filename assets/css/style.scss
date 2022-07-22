@@ -173,8 +173,7 @@ a{
 
 .play{
     @include boxBorder();
-    // background: $saureGurke;
-    background-color: rgb(107, 155, 171);
+    background-color: $schlumpf;
     width: 90%;
     max-width: 400px;
     button{
@@ -183,7 +182,7 @@ a{
             border-radius: 50%;
             border: none;
             &:hover{
-                background: $saureGurkeDark;
+                background: $schlumpfDark;
             }
             img{
                 width: 70px;

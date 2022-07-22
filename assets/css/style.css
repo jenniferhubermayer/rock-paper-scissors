@@ -155,7 +155,7 @@ a:hover {
 .play {
   border: solid 8px black;
   padding: 10px;
-  background-color: rgb(107, 155, 171);
+  background-color: rgb(142, 185, 200);
   width: 90%;
   max-width: 400px;
 }
@@ -165,7 +165,7 @@ a:hover {
   border: none;
 }
 .play button.btn-users-hand:hover {
-  background: rgb(117, 232, 3);
+  background: rgb(127, 167, 182);
 }
 .play button.btn-users-hand img {
   width: 70px;
