@@ -1,45 +1,8 @@
-.hand {
-  width: 180px;
-  height: 180px;
-}
-.hand#hand-right {
-  transform: scaleX(-1) rotate(90deg);
-}
-.hand#hand-left {
-  transform: rotate(90deg);
-}
-
-.big-hands {
-  width: 100%;
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.hand-shake#hand-right {
-  -webkit-animation: shakeHandRight 1s;
-          animation: shakeHandRight 1s;
-  -webkit-animation-iteration-count: 3;
-          animation-iteration-count: 3;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
-}
-.hand-shake#hand-left {
-  -webkit-animation: shakeHandLeft 1s;
-          animation: shakeHandLeft 1s;
-  -webkit-animation-iteration-count: 3;
-          animation-iteration-count: 3;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
-}
-
 @-webkit-keyframes shakeHandLeft {
   60% {
     transform: rotate(75deg);
   }
 }
-
 @keyframes shakeHandLeft {
   60% {
     transform: rotate(75deg);
@@ -54,4 +17,31 @@
   60% {
     transform: scaleX(-1) rotate(75deg);
   }
+}
+.hand#hand-right {
+  transform: scaleX(-1) rotate(90deg);
+}
+.hand#hand-left {
+  transform: rotate(90deg);
+}
+
+.hand-shake#hand-right {
+  -webkit-animation-name: shakeHandRight;
+          animation-name: shakeHandRight;
+  -webkit-animation-duration: 0.75s;
+          animation-duration: 0.75s;
+  -webkit-animation-iteration-count: 3;
+          animation-iteration-count: 3;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+}
+.hand-shake#hand-left {
+  -webkit-animation-name: shakeHandLeft;
+          animation-name: shakeHandLeft;
+  -webkit-animation-duration: 0.75s;
+          animation-duration: 0.75s;
+  -webkit-animation-iteration-count: 3;
+          animation-iteration-count: 3;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
 }/*# sourceMappingURL=animations.css.map */

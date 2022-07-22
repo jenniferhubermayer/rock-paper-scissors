@@ -1,5 +1,38 @@
+// ------------------
+// IMPORTS
+// ------------------
+
 @import url(./animations.css);
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+// ------------------
+// VARIABLES
+// ------------------
+
+$leberwurst: rgb(236, 153, 153);
+$saureGurke: chartreuse;
+$saureGurkeDark: rgb(118, 232, 3);
+
+// ------------------
+// MIXINS
+// ------------------
+
+@mixin flexBox($alignItems, $justifyContent, $gap) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: $alignItems;
+    justify-content: $justifyContent;
+    gap: $gap;
+}
+
+@mixin boxBorder() {
+    border: solid 8px black;
+    padding: 10px;
+}
+
+// ------------------
+// GENERAL STYLES
+// ------------------
 
 *{
     padding: 0;
@@ -10,105 +43,96 @@
 html{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
+    text-align: center;
 }
 
 body{
-    background-color: rgb(236, 153, 153);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    background-color: $leberwurst;
+    height: 100vh;
 }
 
-img{
-    height: 300px;
-    width: 300px;
+header{
+    margin-top: 60px;
 }
 
-button{
-    &.btn-users-hand{
-        background-color: unset;
-        border-radius: 50%;
-        border: none;
-        &:hover{
-            background: rgb(118, 232, 3);
-        }
-        img{
-            width: 100px;
-            height: 100px;
-            margin: 25px;
-        }
-    }
+main{
+    @include flexBox(center, center, unset);
+}
+
+footer{
+    margin: 20px 0 60px 0;
 }
 
 h1{
-    width: 100%;
-    text-align: center;
-    font-size: 4rem;
+    font-size: 2rem;
     font-family: 'Righteous', cursive;
-    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem
 }
 
 h3{
-    padding-bottom: 1rem;
+    margin-bottom: 1rem;
     font-size: 1.5rem;
 }
 
+a{
+    font-family: 'Righteous', cursive;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+// ------------------
+// SECTIONS
+// ------------------
+
 .rounds{
-    display: flex;
-    flex-wrap: wrap;
-    width: 80%;
-    text-align: center;
-    border: solid 8px black;
+    @include boxBorder();
+    width: 90%;
     h2{
         width: 100%;
         padding-bottom: 1.5rem;
     }
     &-number{
-        text-align: center;
         width: 100%;
         display: block;
         margin-top: 1rem;
     }
     fieldset{
-        display: flex;
+        @include flexBox(center, center, unset);
         width: 100%;
-        align-items: center;
-        flex-wrap: wrap;
-        justify-content: center;
         border: none;
-    }
-    label{
-        display: block;
-        width: 12%;
-        text-align: left;
-    }
-    input{
-        display: block;
-        width: 12%;
-        text-align: right;
-    }
-    button{
-        background-color: chartreuse;
-        width: 80%;
-        border: none;
-        margin: 10px;
-        padding: 10px;
-        &:hover{
-            background: rgb(118, 232, 3);
+        label{
+            display: block;
+            width: 12%;
+            text-align: left;
+        }
+        input{
+            display: block;
+            width: 12%;
+            text-align: right;
+        }
+        button{
+            @include boxBorder();
+            background-color: $saureGurke;
+            width: 80%;
+            margin: 10px;
+            &:hover{
+                background: $saureGurkeDark;
+            }
         }
     }
 }
+
 .counter{
-    display: flex;
-    flex-wrap: wrap;
-    width: 80%;
-    border: solid 8px black;
-    justify-content: center;
-    gap: 10px;
+    @include boxBorder();
+    @include flexBox(unset, center, 10px);
+    width: 90%;
     .counter-output{
-        display: flex;
-        gap: 40px;
-        align-items: baseline;
+        @include flexBox(baseline, unset, 40px);
         #counter-output-user,
         #counter-output-computer{
             font-size: 2.5rem;
@@ -117,40 +141,45 @@ h3{
     }
 }
 
-footer,
-#round-text-winner{
+.big-hands{
+    @include flexBox(unset, center, 40px);
     width: 100%;
-    text-align: center;
-}
-
-#round-text-winner{
-    span{
-        text-transform: uppercase;
-        font-family: 'Righteous', cursive;
+    margin: 40px 0 40px 0;
+    .hand{
+        width: 120px;
+        height: 120px;
     }
-}
-
-a{
-    text-decoration: none;
-    color: black;
-    text-transform: uppercase;
-    font-family: 'Righteous', cursive;
-    &:hover{
-        text-decoration: underline;
+    h1{
+        @include boxBorder();
+        width: 90%;
+        background-color: $saureGurke;
+    }
+    h2{
+        width: 100%;
+        span{
+            text-transform: uppercase;
+            font-family: 'Righteous', cursive;
+        }
     }
 }
 
 .play{
-    display: flex;
-    background: chartreuse;
-    width: 80%;
-    border: solid black 9px;
-    align-items: center;
-    padding: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-    h3{
-        width: 100%;
-        text-align: center;
+    @include boxBorder();
+    background: $saureGurke;
+    width: 90%;
+    button{
+        &.btn-users-hand{
+            background-color: unset;
+            border-radius: 50%;
+            border: none;
+            &:hover{
+                background: $saureGurkeDark;
+            }
+            img{
+                width: 70px;
+                height: 100px;
+                margin: 0 15px 0 15px;
+            }
+        }
     }
 }

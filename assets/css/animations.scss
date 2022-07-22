@@ -1,6 +1,34 @@
+// ------------------
+// MIXINS
+// ------------------
+
+@mixin shakeHand($animationName) {
+    animation-name: $animationName;
+    animation-duration: 0.75s;
+    animation-iteration-count: 3;
+    animation-timing-function: ease-out;
+}
+
+// ------------------
+// ANIMATIONS
+// ------------------
+
+@keyframes shakeHandLeft {
+    60%{
+        transform: rotate(75deg);
+    }
+}
+@keyframes shakeHandRight {
+    60%{
+        transform: scaleX(-1) rotate(75deg);
+    }
+}
+
+// ------------------
+// ASSIGNMENTS
+// ------------------
+
 .hand{
-    width: 180px;
-    height: 180px;
     &#hand-right{
         transform: scaleX(-1) rotate(90deg);
         }
@@ -9,34 +37,12 @@
     }
     }
 
-.big-hands{
-    width: 100%;
-    display: flex;
-    gap: 40px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
 .hand-shake{
     &#hand-right{
-        animation: shakeHandRight 1s;
-        animation-iteration-count: 3;
-        animation-timing-function: ease-out;
+        @include shakeHand(shakeHandRight)
         }
     &#hand-left{
-        animation: shakeHandLeft 1s;
-        animation-iteration-count: 3;
-        animation-timing-function: ease-out;
+        @include shakeHand(shakeHandLeft)
     }
 }
 
-    @keyframes shakeHandLeft {
-        60%{
-            transform: rotate(75deg);
-        }
-    }
-    @keyframes shakeHandRight {
-        60%{
-            transform: scaleX(-1) rotate(75deg);
-        }
-    }
