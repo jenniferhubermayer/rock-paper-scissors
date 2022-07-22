@@ -139,7 +139,7 @@ userHandButton.forEach((btn) => {
           sectionEndWinner.style.display = "unset";
           sectionFooter.style.display = "inherit";
           if (counterRankUser > counterRankComputer){
-            sectionEndWinner.innerHTML = "Woohoo! You won!"
+            sectionEndWinner.innerHTML = "Woohoo! You win!"
           }
           else if (counterRankUser < counterRankComputer){
             sectionEndWinner.innerHTML = "You're a looooooser! Try it again!"
