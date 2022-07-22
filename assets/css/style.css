@@ -59,6 +59,7 @@ a:hover {
   border: solid 8px black;
   padding: 10px;
   width: 90%;
+  max-width: 400px;
 }
 .rounds h2 {
   width: 100%;
@@ -110,6 +111,7 @@ a:hover {
   justify-content: center;
   gap: 10px;
   width: 90%;
+  max-width: 400px;
 }
 .counter .counter-output {
   display: flex;
@@ -129,9 +131,9 @@ a:hover {
   flex-wrap: wrap;
   align-items: unset;
   justify-content: center;
-  gap: 40px;
+  gap: 20px;
   width: 100%;
-  margin: 40px 0 40px 0;
+  margin: 20px 0 20px 0;
 }
 .big-hands .hand {
   width: 120px;
@@ -141,7 +143,9 @@ a:hover {
   border: solid 8px black;
   padding: 10px;
   width: 90%;
+  max-width: 400px;
   background-color: chartreuse;
+  margin-bottom: unset;
 }
 .big-hands h2 {
   width: 100%;
@@ -156,6 +160,7 @@ a:hover {
   padding: 10px;
   background: chartreuse;
   width: 90%;
+  max-width: 400px;
 }
 .play button.btn-users-hand {
   background-color: unset;

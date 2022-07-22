@@ -92,6 +92,7 @@ a{
 .rounds{
     @include boxBorder();
     width: 90%;
+    max-width: 400px;
     h2{
         width: 100%;
         padding-bottom: 1.5rem;
@@ -133,6 +134,7 @@ a{
     @include boxBorder();
     @include flexBox(unset, center, 10px);
     width: 90%;
+    max-width: 400px;
     .counter-output{
         @include flexBox(baseline, unset, 40px);
         #counter-output-user,
@@ -144,9 +146,9 @@ a{
 }
 
 .big-hands{
-    @include flexBox(unset, center, 40px);
+    @include flexBox(unset, center, 20px);
     width: 100%;
-    margin: 40px 0 40px 0;
+    margin: 20px 0 20px 0;
     .hand{
         width: 120px;
         height: 120px;
@@ -154,7 +156,9 @@ a{
     h1{
         @include boxBorder();
         width: 90%;
+        max-width: 400px;
         background-color: $saureGurke;
+        margin-bottom: unset;
     }
     h2{
         width: 100%;
@@ -169,6 +173,7 @@ a{
     @include boxBorder();
     background: $saureGurke;
     width: 90%;
+    max-width: 400px;
     button{
         &.btn-users-hand{
             background-color: unset;

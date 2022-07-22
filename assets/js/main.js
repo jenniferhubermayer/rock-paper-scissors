@@ -27,6 +27,7 @@ sectionCounter.style.display = "none";
 sectionPlay.style.display = "none";
 sectionRoundWinner.style.display = "none";
 sectionEndWinner.style.display = "none";
+sectionFooter.style.display = "none"
 
 // ---------------
 // VALUES
@@ -70,7 +71,8 @@ document.querySelector("#submit").addEventListener("click", (event) => {
   if (roundsNumberSelectedOutput.innerText >= 5){
   sectionRounds.style.display = "none";
   sectionCounter.style.display = "flex";
-  sectionPlay.style.display = "unset"
+  sectionPlay.style.display = "unset";
+  sectionFooter.style.display = "inherit";
   }
   else{
     window.alert("First things first. Please choose the number of rounds you wish to play!")
