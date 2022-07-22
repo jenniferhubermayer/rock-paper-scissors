@@ -118,6 +118,8 @@ a{
         button{
             @include boxBorder();
             background-color: $saureGurke;
+            color: black;
+            font-family: 'Righteous', cursive;
             width: 80%;
             margin: 10px;
             &:hover{

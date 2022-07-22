@@ -92,6 +92,8 @@ a:hover {
   border: solid 8px black;
   padding: 10px;
   background-color: chartreuse;
+  color: black;
+  font-family: "Righteous", cursive;
   width: 80%;
   margin: 10px;
 }
