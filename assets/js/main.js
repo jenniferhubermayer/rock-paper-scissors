@@ -39,7 +39,7 @@ counterRankComputer = 0;
 roundsNumberRank = 0;
 
 // ---------------
-// FUNCTIONS
+// FUNCTIONS FOR STYLES
 // ---------------
 
 function addShakeHands() {
@@ -50,6 +50,39 @@ function addShakeHands() {
 function removeShakeHands() {
   shakeRightHand.classList.remove("hand-shake");
   shakeLeftHand.classList.remove("hand-shake")
+}
+
+function addMainStyle() {
+  document.querySelector("body").classList.add("main");
+}
+
+function addWinStyle() {
+  document.querySelector("body").classList.add("win");
+
+}
+
+function addDrawStyle() {
+  document.querySelector("body").classList.add("draw");
+}
+
+function addLoseStyle() {
+  document.querySelector("body").classList.add("lose");
+}
+
+function removeMainStyle() {
+  document.querySelector("body").classList.remove("main");
+}
+
+function removeWinStyle() {
+  document.querySelector("body").classList.remove("win");
+}
+
+function removeDrawStyle() {
+  document.querySelector("body").classList.remove("draw");
+}
+
+function removeLoseStyle() {
+  document.querySelector("body").classList.remove("lose");
 }
 
 // ---------------
@@ -101,7 +134,10 @@ userHandButton.forEach((btn) => {
     sectionPlay.style.display = "none"
     sectionRoundWinner.style.display = "none";
     sectionEndWinner.style.display = "none";
-    sectionBody.style.backgroundColor = "rgb(236, 153, 153)";
+    // sectionBody.style.backgroundColor = "rgb(236, 153, 153)";
+    removeWinStyle();
+    removeDrawStyle();
+    removeLoseStyle();
 
     // Fügt die CSS Klasse nach einem Timeout hinzu und gibt die Hand des Users aus.
     setTimeout(function(){
@@ -109,7 +145,7 @@ userHandButton.forEach((btn) => {
       roundTextWinner.innerText = "";
       addShakeHands();
       sectionFooter.style.display = "none";
-      sectionBody.style.backgroundColor = "lightblue";
+      // sectionBody.style.backgroundColor = "lightblue";
 
       // Checke den Gewinner der Runde, nach 3200 Millisekunden:
       setTimeout(function checkRoundWinner(){
@@ -118,16 +154,18 @@ userHandButton.forEach((btn) => {
           sectionRoundWinner.style.display = "unset";
           sectionPlay.style.display = "unset";
           sectionFooter.style.display = "inherit";
-          sectionBody.style.backgroundColor = "#f4c97a";
-          sectionPlay.style.backgroundColor = "#f2a81f";
+          // sectionBody.style.backgroundColor = "#f4c97a";
+          // sectionPlay.style.backgroundColor = "#f2a81f";
+          addDrawStyle();
         }
         else if (usersHand == "paper" && computersHand == "stone" || usersHand == "scissors" && computersHand == "paper" || usersHand == "stone" && computersHand == "scissors" ){
           roundTextWinner.innerHTML = `<span>${usersHand}</span> beats <span>${computersHand}</span>.<br>One point for you!`;
           sectionRoundWinner.style.display = "unset";
           sectionPlay.style.display = "unset";
           sectionFooter.style.display = "inherit";
-          sectionBody.style.backgroundColor = "#c7f698";
-          sectionPlay.style.backgroundColor = "chartreuse";
+          // sectionBody.style.backgroundColor = "#c7f698";
+          // sectionPlay.style.backgroundColor = "chartreuse";
+          addWinStyle();
           counterRankUser ++;
           counterOutputUser.innerText = counterRankUser;
         }
@@ -136,8 +174,9 @@ userHandButton.forEach((btn) => {
           sectionRoundWinner.style.display = "unset";
           sectionPlay.style.display = "unset";
           sectionFooter.style.display = "inherit";
-          sectionBody.style.backgroundColor = "rgb(236, 153, 153)";
-          sectionPlay.style.backgroundColor = "rgb(225, 113, 113)";
+          // sectionBody.style.backgroundColor = "rgb(236, 153, 153)";
+          // sectionPlay.style.backgroundColor = "rgb(225, 113, 113)";
+          addLoseStyle();
           counterRankComputer ++;
           counterOutputComputer.innerText = counterRankComputer;
         }
@@ -155,12 +194,12 @@ userHandButton.forEach((btn) => {
             sectionPlay.style.backgroundColor = "chartreuse";
           }
           else if (counterRankUser < counterRankComputer){
-            sectionEndWinner.innerHTML = "You're a looooooser! Try it again!";
+            sectionEndWinner.innerHTML = "You're a loooser!";
             sectionBody.style.backgroundColor = "rgb(236, 153, 153)";
             sectionPlay.style.backgroundColor = "rgb(225, 113, 113)";
           }
           else{
-            sectionEndWinner.innerHTML = "Looks like this game was a draw. Try it again!";
+            sectionEndWinner.innerHTML = "This game was a draw.";
             sectionBody.style.backgroundColor = "#f4c97a";
             sectionPlay.style.backgroundColor = "#f2a81f";
           }

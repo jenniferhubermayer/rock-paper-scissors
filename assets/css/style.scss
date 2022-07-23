@@ -9,14 +9,18 @@
 // VARIABLES
 // ------------------
 
-$leberwurst: rgb(236, 153, 153);
-$leberwurstDark: rgb(225, 113, 113);
+$leberwurstLight: rgb(236, 153, 153);
+$leberwurst: rgb(225, 113, 113);
+$leberwurstDark: rgb(206, 104, 104);
 $saureGurkeLight: #c7f698;
 $saureGurke: chartreuse;
-$saureGurkeDark: rgb(117, 232, 3);
+$saureGurkeDark: rgb(116, 217, 15);
 $schlumpfLight: lightblue;
 $schlumpf: rgb(142, 185, 200);
 $schlumpfDark: rgb(127, 167, 182);
+$mandarinLight: #f4c97a;
+$mandarin: #f2a81f;
+$mandarinDark: #d9971c;
 
 // ------------------
 // MIXINS
@@ -188,6 +192,94 @@ a{
                 width: 70px;
                 height: 100px;
                 margin: 0 15px 0 15px;
+            }
+        }
+    }
+}
+
+// ------
+// main
+// ------
+
+body .main{
+background-color: $schlumpfLight;
+}
+
+.main{
+    .play{
+        background-color: $schlumpf;
+        button{
+            &.btn-users-hand{
+                background-color: $schlumpf;
+                &:hover{
+                    background: $schlumpfDark;
+                }
+            }
+        }
+    }
+}
+
+// ------
+// win
+// ------
+
+body .win{
+background-color: $saureGurkeLight;
+}
+
+.win{
+    .play{
+        background-color: $saureGurke;
+        button{
+            &.btn-users-hand{
+                background-color: $saureGurke;
+                &:hover{
+                    background: $saureGurkeDark;
+                }
+            }
+        }
+    }
+}
+
+// ------
+// draw
+// ------
+
+body .draw{
+    background-color: $mandarinLight;
+}
+
+.draw{
+    .play{
+        background-color: $mandarin;
+        button{
+            &.btn-users-hand{
+                background-color: $mandarin;
+                &:hover{
+                    background: $mandarinDark;
+                }
+            }
+        }
+    }
+}
+
+// ------
+// lose
+// ------
+
+body .lose{
+    background-color: $leberwurstLight;
+}
+
+.lose{
+    .play{
+        background-color: $leberwurst;
+        button{
+            &.btn-users-hand{
+                background-color: $leberwurst;
+                &:hover{
+                    background: $leberwurstDark;
+                }
             }
         }
     }

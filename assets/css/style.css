@@ -171,4 +171,60 @@ a:hover {
   width: 70px;
   height: 100px;
   margin: 0 15px 0 15px;
+}
+
+body .main {
+  background-color: lightblue;
+}
+
+.main .play {
+  background-color: rgb(142, 185, 200);
+}
+.main .play button.btn-users-hand {
+  background-color: rgb(142, 185, 200);
+}
+.main .play button.btn-users-hand:hover {
+  background: rgb(127, 167, 182);
+}
+
+body .win {
+  background-color: #c7f698;
+}
+
+.win .play {
+  background-color: chartreuse;
+}
+.win .play button.btn-users-hand {
+  background-color: chartreuse;
+}
+.win .play button.btn-users-hand:hover {
+  background: rgb(116, 217, 15);
+}
+
+body .draw {
+  background-color: #f4c97a;
+}
+
+.draw .play {
+  background-color: #f2a81f;
+}
+.draw .play button.btn-users-hand {
+  background-color: #f2a81f;
+}
+.draw .play button.btn-users-hand:hover {
+  background: #d9971c;
+}
+
+body .lose {
+  background-color: rgb(236, 153, 153);
+}
+
+.lose .play {
+  background-color: rgb(225, 113, 113);
+}
+.lose .play button.btn-users-hand {
+  background-color: rgb(225, 113, 113);
+}
+.lose .play button.btn-users-hand:hover {
+  background: rgb(206, 104, 104);
 }/*# sourceMappingURL=style.css.map */
