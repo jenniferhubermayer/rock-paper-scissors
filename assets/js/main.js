@@ -2,7 +2,7 @@
 // VARIABLES
 // ---------------
 
-let countRounds = document.querySelectorAll("#rounds");
+let countRounds = document.getElementsByName("rounds");
 let roundsNumberRankOutput = document.querySelector("#rounds-number-rank");
 let roundsNumberSelectedOutput = document.querySelector("#rounds-number-selected");
 let shakeRightHand = document.getElementById("hand-right");
