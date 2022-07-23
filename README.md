@@ -1,4 +1,4 @@
-# rock-paper-scissors | Online game "rock-paper-scissors"
+# rock-paper-scissors | Online game
 
 This is an online game for "rock-paper-scissors". Simply chose between one of three shapes and play aigainst the computer.
 
