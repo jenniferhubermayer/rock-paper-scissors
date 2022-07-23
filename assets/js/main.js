@@ -202,6 +202,9 @@ userHandButton.forEach((btn) => {
 
       // Beende das Spiel, wenn die Runden gespielt sind, nach 2500 Millisekunden:
       setTimeout(function checkRoundCount(){
+        removeDrawStyle();
+        removeLoseStyle();
+        removeWinStyle();
         if (roundsNumberRankOutput.innerText == roundsNumberSelectedOutput.innerText){
           sectionPlay.style.display = "none";
           sectionEndWinner.style.display = "unset";
