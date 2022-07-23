@@ -110,18 +110,13 @@ a{
         display: block;
     }
     fieldset{
-        @include flexBox(center, center, unset);
+        @include flexBox(unset, center, unset);
         width: 100%;
         border: none;
         label{
-            display: block;
-            width: 12%;
+            width: 10%;
             text-align: left;
-        }
-        input{
-            display: block;
-            width: 12%;
-            text-align: right;
+            margin-left: 5px;
         }
         button{
             @include boxBorder();
@@ -129,7 +124,7 @@ a{
             color: black;
             font-family: 'Righteous', cursive;
             width: 80%;
-            margin: 10px;
+            margin: 10px auto auto;
             &:hover{
                 background-color: $schlumpfDark;
             }
@@ -156,7 +151,7 @@ a{
     @include flexBox(unset, center, 20px);
     width: 100%;
     margin: 20px 0 20px 0;
-    .hand{
+    img{
         width: 120px;
         height: 120px;
     }
@@ -201,7 +196,7 @@ a{
 // main
 // ------
 
-body .main{
+body.main{
 background-color: $schlumpfLight;
 }
 
@@ -223,7 +218,7 @@ background-color: $schlumpfLight;
 // win
 // ------
 
-body .win{
+body.win{
 background-color: $saureGurkeLight;
 }
 
@@ -245,7 +240,7 @@ background-color: $saureGurkeLight;
 // draw
 // ------
 
-body .draw{
+body.draw{
     background-color: $mandarinLight;
 }
 
@@ -267,7 +262,7 @@ body .draw{
 // lose
 // ------
 
-body .lose{
+body.lose{
     background-color: $leberwurstLight;
 }
 

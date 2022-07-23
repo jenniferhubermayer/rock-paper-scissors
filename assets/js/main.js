@@ -58,7 +58,6 @@ function addMainStyle() {
 
 function addWinStyle() {
   document.querySelector("body").classList.add("win");
-
 }
 
 function addDrawStyle() {
@@ -134,7 +133,6 @@ userHandButton.forEach((btn) => {
     sectionPlay.style.display = "none"
     sectionRoundWinner.style.display = "none";
     sectionEndWinner.style.display = "none";
-    // sectionBody.style.backgroundColor = "rgb(236, 153, 153)";
     removeWinStyle();
     removeDrawStyle();
     removeLoseStyle();
@@ -144,45 +142,65 @@ userHandButton.forEach((btn) => {
       let usersHand = event.target.parentNode.id;
       roundTextWinner.innerText = "";
       addShakeHands();
+      document.querySelector("#hand-right").innerHTML = '<img src="./assets/images/hand-back-fist-regular.svg">';
+      document.querySelector("#hand-left").innerHTML = '<img src="./assets/images/hand-back-fist-regular.svg">';
       sectionFooter.style.display = "none";
-      // sectionBody.style.backgroundColor = "lightblue";
 
-      // Checke den Gewinner der Runde, nach 3200 Millisekunden:
+      // Checke den Gewinner der Runde, nach 2500 Millisekunden:
       setTimeout(function checkRoundWinner(){
         if (usersHand === computersHand) {
-          roundTextWinner.innerHTML = `<span>${usersHand}</span> against <span>${computersHand}</span>.<br>Oops! This round was a draw.`;
+          roundTextWinner.innerHTML = `<span id="left">${usersHand}</span> against <span id="right">${computersHand}</span>.<br>Oops! This round was a draw.`;
           sectionRoundWinner.style.display = "unset";
           sectionPlay.style.display = "unset";
           sectionFooter.style.display = "inherit";
-          // sectionBody.style.backgroundColor = "#f4c97a";
-          // sectionPlay.style.backgroundColor = "#f2a81f";
           addDrawStyle();
         }
         else if (usersHand == "paper" && computersHand == "stone" || usersHand == "scissors" && computersHand == "paper" || usersHand == "stone" && computersHand == "scissors" ){
-          roundTextWinner.innerHTML = `<span>${usersHand}</span> beats <span>${computersHand}</span>.<br>One point for you!`;
+          roundTextWinner.innerHTML = `<span id="left">${usersHand}</span> beats <span id="right">${computersHand}</span>.<br>One point for you!`;
           sectionRoundWinner.style.display = "unset";
           sectionPlay.style.display = "unset";
           sectionFooter.style.display = "inherit";
-          // sectionBody.style.backgroundColor = "#c7f698";
-          // sectionPlay.style.backgroundColor = "chartreuse";
           addWinStyle();
           counterRankUser ++;
           counterOutputUser.innerText = counterRankUser;
         }
         else if (computersHand == "paper" && usersHand == "stone" || computersHand == "scissors" && usersHand == "paper" || computersHand == "stone" && usersHand == "scissors" ){
-          roundTextWinner.innerHTML = `<span>${computersHand}</span> beats <span>${usersHand}</span>.<br>One point for the computer!`;
+          roundTextWinner.innerHTML = `<span id="right">${computersHand}</span> beats <span id="left">${usersHand}</span>.<br>One point for the computer!`;
           sectionRoundWinner.style.display = "unset";
           sectionPlay.style.display = "unset";
           sectionFooter.style.display = "inherit";
-          // sectionBody.style.backgroundColor = "rgb(236, 153, 153)";
-          // sectionPlay.style.backgroundColor = "rgb(225, 113, 113)";
           addLoseStyle();
           counterRankComputer ++;
           counterOutputComputer.innerText = counterRankComputer;
         }
+        function checkGraphic(){
+          switch (document.querySelector("span#right").innerText) {
+            case "STONE":
+              document.getElementById("hand-right").innerHTML = '<img src="./assets/images/hand-back-fist-regular.svg">';
+              break;
+            case "PAPER":
+              document.getElementById("hand-right").innerHTML = '<img src="./assets/images/hand-regular.svg">';
+              break;
+              default:
+              document.getElementById("hand-right").innerHTML = '<img src="./assets/images/hand-scissors-regular.svg">';
+              break;
+          }
+          switch (document.querySelector("span#left").innerText) {
+            case "STONE":
+              document.getElementById("hand-left").innerHTML = '<img src="./assets/images/hand-back-fist-regular.svg">';
+              break;
+            case "PAPER":
+              document.getElementById("hand-left").innerHTML = '<img src="./assets/images/hand-regular.svg">';
+              break;
+            default:
+              document.getElementById("hand-left").innerHTML = '<img src="./assets/images/hand-scissors-regular.svg">';
+              break;
+          }
+        }
+        checkGraphic()
       }, 2500)
 
-      // Beende das Spiel, wenn die Runden gespielt sind:
+      // Beende das Spiel, wenn die Runden gespielt sind, nach 2500 Millisekunden:
       setTimeout(function checkRoundCount(){
         if (roundsNumberRankOutput.innerText == roundsNumberSelectedOutput.innerText){
           sectionPlay.style.display = "none";
@@ -190,23 +208,18 @@ userHandButton.forEach((btn) => {
           sectionFooter.style.display = "inherit";
           if (counterRankUser > counterRankComputer){
             sectionEndWinner.innerHTML = "Woohoo! You win!";
-            sectionBody.style.backgroundColor = "#c7f698";
-            sectionPlay.style.backgroundColor = "chartreuse";
+            addWinStyle();
           }
           else if (counterRankUser < counterRankComputer){
             sectionEndWinner.innerHTML = "You're a loooser!";
-            sectionBody.style.backgroundColor = "rgb(236, 153, 153)";
-            sectionPlay.style.backgroundColor = "rgb(225, 113, 113)";
+            addLoseStyle();
           }
           else{
             sectionEndWinner.innerHTML = "This game was a draw.";
-            sectionBody.style.backgroundColor = "#f4c97a";
-            sectionPlay.style.backgroundColor = "#f2a81f";
+            addDrawStyle();
           }
         }
       }, 2500)
     })
   });
 });
-
-

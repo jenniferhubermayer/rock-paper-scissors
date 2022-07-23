@@ -71,21 +71,16 @@ a:hover {
 .rounds fieldset {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: unset;
   justify-content: center;
   gap: unset;
   width: 100%;
   border: none;
 }
 .rounds fieldset label {
-  display: block;
-  width: 12%;
+  width: 10%;
   text-align: left;
-}
-.rounds fieldset input {
-  display: block;
-  width: 12%;
-  text-align: right;
+  margin-left: 5px;
 }
 .rounds fieldset button {
   border: solid 8px black;
@@ -94,7 +89,7 @@ a:hover {
   color: black;
   font-family: "Righteous", cursive;
   width: 80%;
-  margin: 10px;
+  margin: 10px auto auto;
 }
 .rounds fieldset button:hover {
   background-color: rgb(127, 167, 182);
@@ -133,7 +128,7 @@ a:hover {
   width: 100%;
   margin: 20px 0 20px 0;
 }
-.big-hands .hand {
+.big-hands img {
   width: 120px;
   height: 120px;
 }
@@ -173,7 +168,7 @@ a:hover {
   margin: 0 15px 0 15px;
 }
 
-body .main {
+body.main {
   background-color: lightblue;
 }
 
@@ -187,7 +182,7 @@ body .main {
   background: rgb(127, 167, 182);
 }
 
-body .win {
+body.win {
   background-color: #c7f698;
 }
 
@@ -201,7 +196,7 @@ body .win {
   background: rgb(116, 217, 15);
 }
 
-body .draw {
+body.draw {
   background-color: #f4c97a;
 }
 
@@ -215,7 +210,7 @@ body .draw {
   background: #d9971c;
 }
 
-body .lose {
+body.lose {
   background-color: rgb(236, 153, 153);
 }
 
