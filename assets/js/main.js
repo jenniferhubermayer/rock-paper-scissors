@@ -202,23 +202,26 @@ userHandButton.forEach((btn) => {
 
       // Beende das Spiel, wenn die Runden gespielt sind, nach 2500 Millisekunden:
       setTimeout(function checkRoundCount(){
-        removeDrawStyle();
-        removeLoseStyle();
-        removeWinStyle();
         if (roundsNumberRankOutput.innerText == roundsNumberSelectedOutput.innerText){
           sectionPlay.style.display = "none";
           sectionEndWinner.style.display = "unset";
           sectionFooter.style.display = "inherit";
           if (counterRankUser > counterRankComputer){
             sectionEndWinner.innerHTML = "Woohoo! You win!";
+            removeDrawStyle();
+            removeLoseStyle();
             addWinStyle();
           }
           else if (counterRankUser < counterRankComputer){
             sectionEndWinner.innerHTML = "You're a loooser!";
+            removeDrawStyle();
+            removeWinStyle();
             addLoseStyle();
           }
           else{
             sectionEndWinner.innerHTML = "This game was a draw.";
+            removeLoseStyle();
+            removeWinStyle();
             addDrawStyle();
           }
         }
