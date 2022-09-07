@@ -17,7 +17,7 @@ let sectionCounter = document.querySelector(".counter");
 let sectionPlay = document.querySelector(".play");
 let sectionRoundWinner = document.querySelector("#round-text-winner");
 let sectionEndWinner = document.querySelector("#end-text-winner");
-let sectionBody = document.querySelector("body");
+// let sectionBody = document.querySelector("body");
 let sectionFooter = document.querySelector("footer");
 
 // ---------------
@@ -28,15 +28,15 @@ sectionCounter.style.display = "none";
 sectionPlay.style.display = "none";
 sectionRoundWinner.style.display = "none";
 sectionEndWinner.style.display = "none";
-sectionFooter.style.display = "none"
+sectionFooter.style.display = "none";
 
 // ---------------
 // VALUES
 // ---------------
 
-counterRankUser = 0;
-counterRankComputer = 0;
-roundsNumberRank = 0;
+let counterRankUser = 0;
+let counterRankComputer = 0;
+let roundsNumberRank = 0;
 
 // ---------------
 // FUNCTIONS FOR STYLES
@@ -49,12 +49,12 @@ function addShakeHands() {
 
 function removeShakeHands() {
   shakeRightHand.classList.remove("hand-shake");
-  shakeLeftHand.classList.remove("hand-shake")
+  shakeLeftHand.classList.remove("hand-shake");
 }
 
-function addMainStyle() {
-  document.querySelector("body").classList.add("main");
-}
+// function addMainStyle() {
+//  document.querySelector("body").classList.add("main");
+//}
 
 function addWinStyle() {
   document.querySelector("body").classList.add("win");
@@ -68,9 +68,9 @@ function addLoseStyle() {
   document.querySelector("body").classList.add("lose");
 }
 
-function removeMainStyle() {
-  document.querySelector("body").classList.remove("main");
-}
+// function removeMainStyle() {
+//  document.querySelector("body").classList.remove("main");
+//}
 
 function removeWinStyle() {
   document.querySelector("body").classList.remove("win");
@@ -92,7 +92,7 @@ function removeLoseStyle() {
 countRounds.forEach((btn) => {
   btn.addEventListener("change", (event) => {
     event.preventDefault();
-    roundsNumberSelected = event.target.value;
+    let roundsNumberSelected = event.target.value;
     roundsNumberSelectedOutput.innerText = roundsNumberSelected;
     });
 });
@@ -108,7 +108,7 @@ document.querySelector("#submit").addEventListener("click", (event) => {
     sectionFooter.style.display = "inherit";
   }
   else{
-    window.alert("First things first. Please choose the number of rounds you wish to play!")
+    window.alert("First things first. Please choose the number of rounds you wish to play!");
   }
 });
 
@@ -130,7 +130,7 @@ userHandButton.forEach((btn) => {
 
     // Entfernt die CSS Klasse für das Händeschütteln, die Buttons und Gewinnertexte:
     removeShakeHands();
-    sectionPlay.style.display = "none"
+    sectionPlay.style.display = "none";
     sectionRoundWinner.style.display = "none";
     sectionEndWinner.style.display = "none";
     removeWinStyle();
@@ -197,8 +197,8 @@ userHandButton.forEach((btn) => {
               break;
           }
         }
-        checkGraphic()
-      }, 2500)
+        checkGraphic();
+      }, 2500);
 
       // Beende das Spiel, wenn die Runden gespielt sind, nach 2500 Millisekunden:
       setTimeout(function checkRoundCount(){
@@ -225,7 +225,7 @@ userHandButton.forEach((btn) => {
             addDrawStyle();
           }
         }
-      }, 2500)
-    })
+      }, 2500);
+    });
   });
 });
