@@ -17,7 +17,6 @@ let sectionCounter = document.querySelector(".counter");
 let sectionPlay = document.querySelector(".play");
 let sectionRoundWinner = document.querySelector("#round-text-winner");
 let sectionEndWinner = document.querySelector("#end-text-winner");
-// let sectionBody = document.querySelector("body");
 let sectionFooter = document.querySelector("footer");
 
 // ---------------
@@ -52,10 +51,6 @@ function removeShakeHands() {
   shakeLeftHand.classList.remove("hand-shake");
 }
 
-// function addMainStyle() {
-//  document.querySelector("body").classList.add("main");
-//}
-
 function addWinStyle() {
   document.querySelector("body").classList.add("win");
 }
@@ -67,10 +62,6 @@ function addDrawStyle() {
 function addLoseStyle() {
   document.querySelector("body").classList.add("lose");
 }
-
-// function removeMainStyle() {
-//  document.querySelector("body").classList.remove("main");
-//}
 
 function removeWinStyle() {
   document.querySelector("body").classList.remove("win");
